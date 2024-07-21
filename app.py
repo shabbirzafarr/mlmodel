@@ -52,3 +52,8 @@ async def predict(data: UserInput):
     adjusted_prediction = 1 if prediction[0] >= 0.5 else 0
     
     return {"prediction": adjusted_prediction}
+    
+if __name__ == "__main__":
+    import uvicorn
+    # Ensure the app is listening on 0.0.0.0 and the correct port
+    uvicorn.run(app, host="0.0.0.0", port=10000)  # Replace 10000 with the p
